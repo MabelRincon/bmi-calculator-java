@@ -9,12 +9,13 @@
   - BMI Categories
   - How to calculate BMI?
 - How to use this BMI Calculator
-- Classes
+- Class Diagram
 - Getting Started
   - Prerequisites
   - Installation
-- Tests
 - Build
+- Usage
+- Tests
 - Feedback and Contributions
 - Contact
 
@@ -57,7 +58,7 @@ It’s important to note that while BMI is a useful tool for assessing weight-re
 
 Additionally, it’s not a reliable indicator of health for people who are very tall or short, pregnant women, or people with certain medical conditions.
 
-## Classes
+## Class Diagram
 
 1. **BMIService** → Contains logic to calculate BMI and classify weight.
 2. **BMICalculator (Main Class)** → Calls BMIService and prints the result.
@@ -92,10 +93,28 @@ cd bmi-calculator-java
 ```Bash
 mvn clean install
 ```
+## Build
+
+**Use Maven:**
+
+```Bash
+mvn clean package
+```
+
+## Usage
+
+On Terminal, type the below commands
+```Bash
+java -cp target/classes dev.mabel.bmi_calculator.BMICalculator_App
+```
+Then type your weight and heigh to get your BMI and your category.
+
+![image](https://github.com/user-attachments/assets/fc32bd38-0df5-4803-9983-47c11025c862)
 
 ## Tests
 
 Test coverage: 100%
+![BMICalculator_testCoverage](https://github.com/user-attachments/assets/95ccfaa7-96d2-45cc-9c4d-cc8d33891a85)
 
 #### **BMIService Class**
 - Calculate BMI: After provide heigh and weight, should calculate BMI
@@ -113,14 +132,6 @@ Test coverage: 100%
 
 ```Bash
 mvn test
-```
-
-## Build
-
-**Example (using Maven):**
-
-```Bash
-mvn clean package
 ```
 
 ## Feedback and Contributions:
