@@ -20,10 +20,11 @@ public class BMIServiceTest {
     @DisplayName("Should throw exception when height is zero")
     void testCalculateBMI_ZeroHeight_ShouldThrowException() {
         BMIService bmiService = new BMIService();
-        Exception exception = assertThrows(ArithmeticException.class, () -> {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             bmiService.calculateBMI(70, 0);
+        bmiService.calculateBMI(70, 0);
         });
-        assertThat(exception.getMessage(), containsString("/ by zero"));
+        assertThat(exception.getMessage(), containsString("Height must be positive"));
     }
 
     @Test
@@ -31,7 +32,7 @@ public class BMIServiceTest {
     void testCalculateBMI_ZeroWeight_ShouldReturnZero() {
         BMIService bmiService = new BMIService();
         double bmi = bmiService.calculateBMI(0, 1.75);
-        assertThat(bmi, is(0.0));  // BMI = 0 / (1.75 * 1.75) = 0.0
+        assertThat(bmi, is(0.0));
     }
 
     @Test
@@ -51,7 +52,7 @@ public class BMIServiceTest {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
             bmiService.calculateBMI(-70, 1.75);
         });
-        assertThat(exception.getMessage(), containsString("Weight must be positive"));
+        assertThat(exception.getMessage(), containsString("Weight cannot be negative"));
     }
 
     @Test
