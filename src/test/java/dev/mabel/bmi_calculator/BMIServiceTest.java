@@ -64,4 +64,18 @@ public class BMIServiceTest {
         });
         assertThat(exception.getMessage(), containsString("Weight and Height must be positive"));
     }
+
+    @Test
+    @DisplayName("Should classify BMI")
+    void testClassifyBMI() {
+    BMIService bmiService = new BMIService();
+    assertThat(bmiService.classifyBMI(15), is("Severe thinness"));
+    assertThat(bmiService.classifyBMI(16.5), is("Moderate thinness"));
+    assertThat(bmiService.classifyBMI(17.8), is("Mild thinness"));
+    assertThat(bmiService.classifyBMI(22), is("Normal weight"));
+    assertThat(bmiService.classifyBMI(27), is("Overweight"));
+    assertThat(bmiService.classifyBMI(32), is("Mild obesity"));
+    assertThat(bmiService.classifyBMI(37), is("Moderate obesity"));
+    assertThat(bmiService.classifyBMI(42), is("Morbid obesity"));
+}
 }
