@@ -1,4 +1,4 @@
-package dev.mabel.test_java;
+package dev.mabel.test_bmi_calculator;
 
 import org.junit.jupiter.api.Test;
 
