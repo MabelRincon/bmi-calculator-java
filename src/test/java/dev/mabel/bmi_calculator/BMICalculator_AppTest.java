@@ -1,10 +1,10 @@
-package dev.mabel.test_bmi_calculator;
+package dev.mabel.bmi_calculator;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AppTest {
+class BMICalculator_AppTest {
 
     @Test
     void testApp() {
