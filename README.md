@@ -1,4 +1,6 @@
-# BODY MASS INDEX CALCULATOR
+# BMI CALCULATOR
+![image](https://github.com/user-attachments/assets/70ba7947-8ee4-488a-837b-d423b9327a77)
+
 
 ## Table of Contents
 
@@ -13,7 +15,6 @@
   - Installation
 - Tests
 - Build
-- Usage
 - Feedback and Contributions
 - Contact
 
@@ -34,7 +35,7 @@ A BMI of less than 18.5 is considered underweight. A BMI between 18.5 and 24.9 i
 
 Based on the calculated BMI, you can determine current situation. The results will fall within the ranges specified in the range below:
 
-![bmi](src/main/java/dev/mabel/template_java/resources/static/images/BMI.png)
+![image](https://github.com/user-attachments/assets/c1dfc880-fd8e-44a9-b308-55d701d26f7c)
 
 ### How to Calculate BMI?
 
@@ -61,7 +62,7 @@ Additionally, it’s not a reliable indicator of health for people who are very 
 1. **BMIService** → Contains logic to calculate BMI and classify weight.
 2. **BMICalculator (Main Class)** → Calls BMIService and prints the result.
 
-![class-diagram](src/main/java/dev/mabel/template_java/resources/static/images/bmi_class_diagram.png)
+Click here to see the [class-diagram](https://drive.google.com/file/d/15CoWX8VfJ-cB7flB8k6pKPdHSs1JGG2v/view?usp=sharing)
 
 ## Getting Started
 
@@ -94,7 +95,19 @@ mvn clean install
 
 ## Tests
 
-Describe how to run the project's tests.  Specify the testing framework used (e.g., JUnit, TestNG) and provide commands for running the tests.
+Test coverage: 100%
+
+#### **BMIService Class**
+- Calculate BMI: After provide heigh and weight, should calculate BMI
+- Tested 5 Edge cases:
+> 1. Zero height (height = 0) → Should handle division by zero.
+> 2. Zero weight (weight = 0) → Should return 0.0 (since 0 / any number = 0).
+> 3. Negative height (height < 0) → Should return an exception or error.
+> 4. Negative weight (weight < 0) → Should return an exception or error.
+> 5. Both weight and height negative → Should return an exception or error.
+- BMI Classification: Check that it classify as expected after calculate BMI.
+#### **BMI Calculator App**
+- Tested happy path to reach 100% tests coverage.
 
 **Example (using Maven and JUnit):**
 
@@ -104,26 +117,10 @@ mvn test
 
 ## Build
 
-Explain how to build the project.  Specify the build tool used (e.g., Maven, Gradle) and provide the necessary commands.
-
 **Example (using Maven):**
 
 ```Bash
 mvn clean package
-```
-
-## Usage
-
-Provide examples of how to use your project.  Include code snippets, screenshots, or GIFs if helpful.  Explain the different options and parameters available.
-
-**Example (Java code snippet):**
-
-```Java
-// Example usage of the main function
-MyClass myObject = new MyClass();
-myObject.doSomething("important argument");
-int result = myObject.calculateValue(10, 20);
-System.out.println("Result: " + result);
 ```
 
 ## Feedback and Contributions:
